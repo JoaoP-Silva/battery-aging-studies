@@ -1,0 +1,5 @@
+#.mat files
+*.mat
+
+#ipynb checkpoints
+.ipynb_checkpoints/*
