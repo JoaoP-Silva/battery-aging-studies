@@ -38,24 +38,25 @@ for k in range(len(pkl_files)):
                     summary_TA, 'Tmin': summary_TM, 'Tmax': summary_TX, 'chargetime': summary_CT,
                     'cycle': summary_CY}
         cycles = f[batch['cycles'][i,0]]
+    
         cycle_dict = {}
 
-    for j in range(cycles['I'].shape[0]):
-        I = np.hstack((f[cycles['I'][j,0]].value))
-        Qc = np.hstack((f[cycles['Qc'][j,0]].value))
-        Qd = np.hstack((f[cycles['Qd'][j,0]].value))
-        Qdlin = np.hstack((f[cycles['Qdlin'][j,0]].value))
-        T = np.hstack((f[cycles['T'][j,0]].value))
-        Tdlin = np.hstack((f[cycles['Tdlin'][j,0]].value))
-        V = np.hstack((f[cycles['V'][j,0]].value))
-        dQdV = np.hstack((f[cycles['discharge_dQdV'][j,0]].value))
-        t = np.hstack((f[cycles['t'][j,0]].value))
-        cd = {'I': I, 'Qc': Qc, 'Qd': Qd, 'Qdlin': Qdlin, 'T': T, 'Tdlin': Tdlin, 'V':V, 'dQdV': dQdV, 't':t}
-        cycle_dict[str(j)] = cd
+        for j in range(cycles['I'].shape[0]):
+            I = np.hstack((f[cycles['I'][j,0]].value))
+            Qc = np.hstack((f[cycles['Qc'][j,0]].value))
+            Qd = np.hstack((f[cycles['Qd'][j,0]].value))
+            Qdlin = np.hstack((f[cycles['Qdlin'][j,0]].value))
+            T = np.hstack((f[cycles['T'][j,0]].value))
+            Tdlin = np.hstack((f[cycles['Tdlin'][j,0]].value))
+            V = np.hstack((f[cycles['V'][j,0]].value))
+            dQdV = np.hstack((f[cycles['discharge_dQdV'][j,0]].value))
+            t = np.hstack((f[cycles['t'][j,0]].value))
+            cd = {'I': I, 'Qc': Qc, 'Qd': Qd, 'Qdlin': Qdlin, 'T': T, 'Tdlin': Tdlin, 'V':V, 'dQdV': dQdV, 't':t}
+            cycle_dict[str(j)] = cd
 
-    cell_dict = {'cycle_life': cl, 'charge_policy':policy, 'summary': summary, 'cycles': cycle_dict}
-    key = 'b1c' + str(i)
-    bat_dict[key]=   cell_dict
+        cell_dict = {'cycle_life': cl, 'charge_policy':policy, 'summary': summary, 'cycles': cycle_dict}
+        key = f'b{k + 1}c' + str(i)
+        bat_dict[key]=   cell_dict
 
     with open(pkl_file,'wb') as fp:
         pickle.dump(bat_dict,fp)
