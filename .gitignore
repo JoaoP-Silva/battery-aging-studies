@@ -6,3 +6,9 @@
 
 #data
 data/*
+
+#pycache dirs
+**/__pycache__/*
+
+#vscode dir
+**/.vscode/*
