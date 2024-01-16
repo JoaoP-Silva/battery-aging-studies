@@ -39,7 +39,7 @@ def main():
     del batch2['b2c16']
     
     numBat2 = len(batch2.keys())
-    print(f'Number of cells in batch1 = {numBat2}')
+    print(f'Number of cells in batch2 = {numBat2}')
     
     batch3 = pickle.load(open('data/batch3.pkl','rb'))
     # remove noisy channels from batch3
@@ -51,7 +51,7 @@ def main():
     del batch3['b3c43']
     
     numBat3 = len(batch3.keys())
-    print(f'Number of cells in batch1 = {numBat3}')
+    print(f'Number of cells in batch3 = {numBat3}')
     
     numBat = numBat1 + numBat2 + numBat3
     numBat
