@@ -1,7 +1,0 @@
-###### Requirements with Version Specifiers ######
-h5py==2.8.0
-matplotlib==3.3.4 
-pandas==1.2.3 
-scipy==1.6.1
-
-#python==3.7.10
