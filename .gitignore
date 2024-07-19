@@ -12,3 +12,6 @@ data/*
 
 #vscode dir
 **/.vscode/*
+
+#venv
+*.venv/**
