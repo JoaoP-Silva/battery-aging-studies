@@ -14,4 +14,4 @@ data/*
 **/.vscode/*
 
 #venv
-*.venv/**
+**.venv

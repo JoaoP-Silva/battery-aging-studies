@@ -5,3 +5,8 @@ pandas==1.2.3
 scipy==1.6.1
 
 #python==3.7.10
+# To install python3.7 and pip3.7 in ubuntu run the following commands
+# sudo apt install software-properties-common
+# sudo add-apt-repository ppa:deadsnakes/ppa
+# sudo apt update
+# sudo apt install python3.7 python3-venv python3.7-venv
