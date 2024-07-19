@@ -41,7 +41,10 @@ def main():
             
         cell_dict = {'cycle_life': cl, 'summary': summary, 'cycles': cycle_dict}
         key = f'b1c' + str(i)
-        bat_dict[key]=   cell_dict
+        bat_dict[key] = cell_dict
+
+    with open('../data/batch1.pkl','wb') as fp:
+        pickle.dump(bat_dict, fp)
 
 if __name__ == '__main__':
       main()
