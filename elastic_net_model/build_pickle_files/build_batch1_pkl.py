@@ -39,9 +39,9 @@ for i in range(num_cells):
         cd = {'I': I, 'Qc': Qc, 'Qd': Qd, 'Qdlin': Qdlin, 'T': T, 'Tdlin': Tdlin, 'V':V, 'dQdV': dQdV, 't':t}
         cycle_dict[str(j)] = cd
     
-cell_dict = {'cycle_life': cl, 'summary': summary, 'cycles': cycle_dict}
-key = f'b1c' + str(i)
-bat_dict[key] = cell_dict
+    cell_dict = {'cycle_life': cl, 'summary': summary, 'cycles': cycle_dict}
+    key = f'b1c' + str(i)
+    bat_dict[key] = cell_dict
 
 with open('batch1.pkl','wb') as fp:
     pickle.dump(bat_dict, fp)
