@@ -1,5 +1,6 @@
 ###### Requirements with Version Specifiers ######
 h5py==2.8.0
+h5pickle==0.4.2
 matplotlib==3.3.4 
 pandas==1.2.3 
 scipy==1.6.1

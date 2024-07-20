@@ -1,4 +1,4 @@
-import h5py
+import h5pickle as h5py
 import numpy as np
 import pandas as pd
 import pickle
@@ -43,5 +43,5 @@ cell_dict = {'cycle_life': cl, 'summary': summary, 'cycles': cycle_dict}
 key = f'b1c' + str(i)
 bat_dict[key] = cell_dict
 
-with open('../../data/batch1.pkl','wb') as fp:
+with open('batch1.pkl','wb') as fp:
     pickle.dump(bat_dict, fp)
